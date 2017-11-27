@@ -26,11 +26,7 @@ namespace FirstTest
             NetworkStream stream = client.GetStream();
             Console.WriteLine("Подключено");
 
-            string lol = "Проблема с авторизацией";
-            Console.WriteLine(Convert.ToBase64String(Encoding.ASCII.GetBytes(lol)));
-
             //byte[] data = new byte[256];
-
             //do
             //{
             //    int bytes = stream.Read(data, 0, data.Length);
