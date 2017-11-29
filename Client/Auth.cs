@@ -13,14 +13,14 @@ using System.Net.Sockets;
 
 namespace Client
 {
-    public partial class Form1 : Form
+    public partial class Auth : Form
     {
 
         static string ip = "158.255.152.202";
         static int port = 5000;
         static TcpClient Client = null;
 
-        public Form1()
+        public Auth()
         {
             InitializeComponent();
             
@@ -59,11 +59,24 @@ namespace Client
                     int bytes = stream.Read(data, 0, data.Length);
                     str.Append(Encoding.ASCII.GetString(data, 0, bytes));
                 } while (stream.DataAvailable);
-            }
+            }  
 
-            MessageBox.Show(str.ToString());
             stream.Close();
             Client.Close();
+            if (str != null)
+            {
+                if (str[1].ToString() == "1")
+                {               
+                    MainPage MP = new MainPage();
+                    MP.Show();
+                    Hide();
+                }
+            }
+        }
+
+        private void Auth_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

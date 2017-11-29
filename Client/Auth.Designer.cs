@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class Form1
+    partial class Auth
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -82,7 +82,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Проблемы?";
             // 
-            // Form1
+            // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,8 +92,9 @@
             this.Controls.Add(this.TeacherName_TB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Name_Label);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Auth";
+            this.Text = "Вход";
+            this.Load += new System.EventHandler(this.Auth_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
