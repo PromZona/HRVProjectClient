@@ -23,7 +23,10 @@ namespace Client
         public Auth()
         {
             InitializeComponent();
-            
+            MainPage MP = new MainPage();
+            MP.Show();
+            Hide();
+
         }
 
         private void SendAuth_BTN_Click(object sender, EventArgs e)

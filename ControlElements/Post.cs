@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Client
+namespace ControlElements
 {
-    public partial class PostList : UserControl
+    public partial class Post : UserControl
     {
-        public PostList()
+        public Post()
         {
             InitializeComponent();
         }
 
-        private void PostList_Load(object sender, EventArgs e)
+        private void Post_Load(object sender, EventArgs e)
         {
 
         }
