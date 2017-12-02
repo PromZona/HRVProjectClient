@@ -58,11 +58,11 @@
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Post.cs">
+    <Compile Include="PostControll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Post.Designer.cs">
-      <DependentUpon>Post.cs</DependentUpon>
+    <Compile Include="PostControll.Designer.cs">
+      <DependentUpon>PostControll.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +72,8 @@
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Post.resx">
-      <DependentUpon>Post.cs</DependentUpon>
+    <EmbeddedResource Include="PostControll.resx">
+      <DependentUpon>PostControll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

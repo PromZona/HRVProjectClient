@@ -19,11 +19,13 @@ namespace Client
         static string ip = "158.255.152.202";
         static int port = 5000;
         static TcpClient Client = null;
+        MainPage MP = null;
+
 
         public Auth()
         {
             InitializeComponent();
-            MainPage MP = new MainPage();
+            MP = new MainPage(TeacherName_TB.Text, ip, port);
             MP.Show();
             Hide();
 
@@ -70,7 +72,7 @@ namespace Client
             {
                 if (str[1].ToString() == "1")
                 {               
-                    MainPage MP = new MainPage();
+                    MP = new MainPage(TeacherName_TB.Text, ip, port);
                     MP.Show();
                     Hide();
                 }
@@ -81,5 +83,5 @@ namespace Client
         {
 
         }
-    }
+    }   
 }

@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class Post
+    partial class PostControll
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
