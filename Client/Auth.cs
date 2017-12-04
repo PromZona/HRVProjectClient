@@ -25,14 +25,12 @@ namespace Client
         public Auth()
         {
             InitializeComponent();
-            MP = new MainPage(TeacherName_TB.Text, ip, port);
-            MP.Show();
-            Hide();
-
         }
 
         private void SendAuth_BTN_Click(object sender, EventArgs e)
         {
+            if (TeacherName_TB.Text.Trim() == "") return; // Защита от дурака
+
             Client = new TcpClient(); // Инициализируем переменную
             Client.Connect(IPAddress.Parse(ip), port); // Делаем конект по айпи и порту
             string response = "";

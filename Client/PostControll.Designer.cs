@@ -63,7 +63,7 @@
             this.Date.TabIndex = 2;
             this.Date.Text = "Date";
             // 
-            // Post
+            // PostControll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,9 +71,11 @@
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Important);
             this.Controls.Add(this.Title);
-            this.Name = "Post";
+            this.Name = "PostControll";
             this.Size = new System.Drawing.Size(311, 20);
             this.Load += new System.EventHandler(this.Post_Load);
+            this.Click += new System.EventHandler(this.PostControll_Click);
+            this.DoubleClick += new System.EventHandler(this.PostControll_DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

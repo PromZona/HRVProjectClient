@@ -36,7 +36,22 @@ namespace Client
 
         private void MainPage_Load(object sender, EventArgs e)
         {
-            GetPostsFromServer();
+            GetPostsFromServer(); // Врубать при рабочем серваке
+            //Post n = new Post("Smth", "5", "11.11.1111", "Very Important Text", panel1, this);
+            //n.setControlY(PanelY);
+            //PanelY += 35;
+            //Post k = new Post("kek", "4", "22.11.1011", "Very Important Text", panel1, this);
+            //k.setControlY(PanelY);
+            //PanelY += 35;
+            //Post l = new Post("Cheburek", "1", "11.16.1181", "Very Important Text", panel1, this);
+            //l.setControlY(PanelY);
+            //PanelY += 35;
+            //Post z = new Post("Alternative", "2", "11.11.1156", "Very Important Text", panel1, this);
+            //z.setControlY(PanelY);
+            //PanelY += 35;
+            //Post t = new Post("Stanislav", "2", "14.51.1111", "Very Important Text", panel1, this);
+            //t.setControlY(PanelY);
+            //PanelY += 35;
         }
 
         private void GetPostsFromServer()
@@ -78,7 +93,7 @@ namespace Client
                 StringBuilder cImportant = new StringBuilder();
                 StringBuilder cText = new StringBuilder();
                 int counter = 0;
-                for (int i = 0; i < str.Length; i++)
+                for (int i = 1; i < str.Length; i++)
                 {
                     if (str[i].ToString() != "/" && str[i].ToString() != "&")
                     {
@@ -104,7 +119,7 @@ namespace Client
                         if (str[i].ToString() == "&")
                         {
                             counter = 0;
-                            Post newpost = new Post(cTitle.ToString(), cImportant.ToString(), cDate.ToString(), cText.ToString(), panel1);
+                            Post newpost = new Post(cTitle.ToString(), cImportant.ToString(), cDate.ToString(), cText.ToString(), panel1, this);
                             newpost.setControlY(PanelY);
                             PanelY += 35;
                             Posts.Add(newpost);
@@ -134,13 +149,13 @@ namespace Client
         public PostControll Controll;
         Panel p;
 
-        public Post(string Tit, string Imp, string dat, string tex, Panel pan)
+        public Post(string Tit, string Imp, string dat, string tex, Panel pan, MainPage MP)
         {
             Title = Tit;
             Important = Imp;
             date = dat;
             Text.Append(tex);
-            Controll = new PostControll(Title, Important, date);
+            Controll = new PostControll(Title, Important, date, Text,MP);
             p = pan;
             p.Controls.Add(Controll);
         }

@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 311);
+            this.ClientSize = new System.Drawing.Size(584, 311);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TeacherName_LB);
             this.Controls.Add(this.label1);
