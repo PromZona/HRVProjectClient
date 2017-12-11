@@ -63,7 +63,7 @@
             this.Text_TB.Multiline = true;
             this.Text_TB.Name = "Text_TB";
             this.Text_TB.ReadOnly = true;
-            this.Text_TB.Size = new System.Drawing.Size(471, 202);
+            this.Text_TB.Size = new System.Drawing.Size(560, 182);
             this.Text_TB.TabIndex = 2;
             this.Text_TB.Text = "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT T" +
     "EXT TEXT TEXT TEXT\r\nTEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT " +

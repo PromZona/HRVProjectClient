@@ -81,5 +81,12 @@ namespace Client
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FeedBack FB = new FeedBack("Аноним", ip, port, this);
+            Hide();
+            FB.Show();
+        }
     }   
 }

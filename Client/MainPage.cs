@@ -148,7 +148,6 @@ namespace Client
         StringBuilder Text = new StringBuilder();
         public PostControll Controll;
         Panel p;
-
         public Post(string Tit, string Imp, string dat, string tex, Panel pan, MainPage MP)
         {
             Title = Tit;
@@ -159,7 +158,6 @@ namespace Client
             p = pan;
             p.Controls.Add(Controll);
         }
-
         public void setControlY(int y)
         {
             Controll.Location = new Point(0, y);
