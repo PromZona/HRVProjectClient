@@ -138,6 +138,13 @@ namespace Client
                 MessageBox.Show("Странно, Мнофрмации нет");
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FeedBack FB = new FeedBack("Аноним", ip, port, this);
+            Hide();
+            FB.Show();
+        }
     }
 
     class Post
