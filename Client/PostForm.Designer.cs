@@ -34,6 +34,7 @@
             this.Important_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Date_Label = new System.Windows.Forms.Label();
+            this.IsRead_BTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Back_But
@@ -63,7 +64,7 @@
             this.Text_TB.Multiline = true;
             this.Text_TB.Name = "Text_TB";
             this.Text_TB.ReadOnly = true;
-            this.Text_TB.Size = new System.Drawing.Size(560, 182);
+            this.Text_TB.Size = new System.Drawing.Size(560, 169);
             this.Text_TB.TabIndex = 2;
             this.Text_TB.Text = "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT T" +
     "EXT TEXT TEXT TEXT\r\nTEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT " +
@@ -82,10 +83,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Minion Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(489, 282);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(92, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Проблемы?";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -100,11 +101,22 @@
             this.Date_Label.TabIndex = 7;
             this.Date_Label.Text = "11.11.1111";
             // 
+            // IsRead_BTN
+            // 
+            this.IsRead_BTN.Location = new System.Drawing.Point(196, 272);
+            this.IsRead_BTN.Name = "IsRead_BTN";
+            this.IsRead_BTN.Size = new System.Drawing.Size(173, 28);
+            this.IsRead_BTN.TabIndex = 8;
+            this.IsRead_BTN.Text = "Прочитал";
+            this.IsRead_BTN.UseVisualStyleBackColor = true;
+            this.IsRead_BTN.Click += new System.EventHandler(this.IsRead_BTN_Click);
+            // 
             // PostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 311);
+            this.Controls.Add(this.IsRead_BTN);
             this.Controls.Add(this.Date_Label);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Important_label);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.Label Important_label;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Date_Label;
+        private System.Windows.Forms.Button IsRead_BTN;
     }
 }

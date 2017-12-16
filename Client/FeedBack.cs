@@ -40,8 +40,8 @@ namespace Client
             {
                 Client = new TcpClient(ip, port);
                 NetworkStream stream = Client.GetStream();
-                string response = "3&" + Tit_TB.Text + "/" + Text_TB.Text;
-                byte[] data = Encoding.ASCII.GetBytes(response);
+                string response = "A" + Tit_TB.Text + "/" + Text_TB.Text;
+                byte[] data = Encoding.UTF8.GetBytes(response);
                 stream.Write(data, 0, data.Length);
                 MessageBox.Show("Сообщение доставлено");
             }

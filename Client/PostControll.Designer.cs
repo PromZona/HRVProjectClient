@@ -47,7 +47,7 @@
             // 
             this.Important.AutoSize = true;
             this.Important.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Important.Location = new System.Drawing.Point(86, 0);
+            this.Important.Location = new System.Drawing.Point(393, 0);
             this.Important.Name = "Important";
             this.Important.Size = new System.Drawing.Size(87, 20);
             this.Important.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Date.Location = new System.Drawing.Point(208, 0);
+            this.Date.Location = new System.Drawing.Point(537, 0);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(48, 20);
             this.Date.TabIndex = 2;
@@ -72,7 +72,7 @@
             this.Controls.Add(this.Important);
             this.Controls.Add(this.Title);
             this.Name = "PostControll";
-            this.Size = new System.Drawing.Size(311, 20);
+            this.Size = new System.Drawing.Size(623, 20);
             this.Load += new System.EventHandler(this.Post_Load);
             this.Click += new System.EventHandler(this.PostControll_Click);
             this.DoubleClick += new System.EventHandler(this.PostControll_DoubleClick);

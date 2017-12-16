@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Net;
@@ -67,12 +68,12 @@ namespace Client
                 return;
             }
             NetworkStream stream = Client.GetStream();
-            byte[] data = Encoding.ASCII.GetBytes("2");
-            stream.Write(data, 0, data.Length);
+            byte[] data = Encoding.UTF8.GetBytes("2");
+            stream.Write(data, 0, data.Length);           
 
-            Thread.Sleep(500);
+            Thread.Sleep(600);
 
-            data = new byte[64];
+            data = new byte[1024];
             StringBuilder str = new StringBuilder();
 
             if (stream.DataAvailable)
@@ -80,14 +81,15 @@ namespace Client
                 do
                 {
                     int bytes = stream.Read(data, 0, data.Length);
-                    str.Append(Encoding.ASCII.GetString(data, 0, bytes));
+                    str.Append(Encoding.UTF8.GetString(data, 0, bytes));
                 } while (stream.DataAvailable);
             }
             stream.Close();
             Client.Close();
-
+            str.Append("&");
             if (str.ToString() != "")
             {
+                StringBuilder cId = new StringBuilder();
                 StringBuilder cTitle = new StringBuilder();
                 StringBuilder cDate = new StringBuilder();
                 StringBuilder cImportant = new StringBuilder();
@@ -100,15 +102,18 @@ namespace Client
                         switch (counter)
                         {
                             case 0:
-                                cTitle.Append(str[i].ToString());
+                                cId.Append(str[i].ToString());
                                 break;
                             case 1:
-                                cImportant.Append(str[i].ToString());
+                                cTitle.Append(str[i].ToString());
                                 break;
                             case 2:
-                                cDate.Append(str[i].ToString());
+                                cImportant.Append(str[i].ToString());
                                 break;
                             case 3:
+                                cDate.Append(str[i].ToString());
+                                break;
+                            case 4:
                                 cText.Append(str[i].ToString());
                                 break;
                         }
@@ -116,18 +121,19 @@ namespace Client
                     else
                     {
                         if (str[i].ToString() == "/") counter++;
-                        if (str[i].ToString() == "&")
+                        if (str[i].ToString() == "&" || i == str.Length - 1)
                         {
                             counter = 0;
-                            Post newpost = new Post(cTitle.ToString(), cImportant.ToString(), cDate.ToString(), cText.ToString(), panel1, this);
+                            Post newpost = new Post(Convert.ToInt32(cId.ToString()), cTitle.ToString(), cImportant.ToString(), cDate.ToString(), cText.ToString(), panel1, this, ip, port);
                             newpost.setControlY(PanelY);
                             PanelY += 35;
-                            Posts.Add(newpost);
+                            Posts.Add(newpost);                       
 
                             cText.Clear();
                             cTitle.Clear();
                             cDate.Clear();
-                            cImportant.Clear();                                                                       
+                            cImportant.Clear();
+                            cId.Clear();
                         }
                     }
                     
@@ -135,7 +141,7 @@ namespace Client
             }
             else
             {
-                MessageBox.Show("Странно, Мнофрмации нет");
+                MessageBox.Show("Странно, инофрмации нет");
             }
         }
 
@@ -155,19 +161,26 @@ namespace Client
         StringBuilder Text = new StringBuilder();
         public PostControll Controll;
         Panel p;
-        public Post(string Tit, string Imp, string dat, string tex, Panel pan, MainPage MP)
+        int PostId;
+
+        public Post(int id, string Tit, string Imp, string dat, string tex, Panel pan, MainPage MP, string IP, int PORT)
         {
+            PostId = id;
             Title = Tit;
             Important = Imp;
             date = dat;
             Text.Append(tex);
-            Controll = new PostControll(Title, Important, date, Text,MP);
+            Controll = new PostControll(Title, Important, date, Text,MP, IP, PORT, id);
             p = pan;
             p.Controls.Add(Controll);
         }
         public void setControlY(int y)
         {
             Controll.Location = new Point(0, y);
+        }
+        public string GetTitle()
+        {
+            return Title;
         }
     }
 }

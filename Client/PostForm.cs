@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace Client
 {
@@ -15,9 +17,10 @@ namespace Client
         MainPage MP;
         static bool Exit = true;
         static string ip = "";
-        static int port = 0;       
+        static int port = 0;
+        static int id;
 
-        public PostForm(StringBuilder tex, string tit, string Import, string Dat ,MainPage mp, string IP, int PORT)
+        public PostForm(StringBuilder tex, string tit, string Import, string Dat ,MainPage mp, string IP, int PORT, int ID)
         {
             InitializeComponent();
             MP = mp;
@@ -25,7 +28,9 @@ namespace Client
             Text_TB.Text = tex.ToString();
             Important_label.Text = Import;
             Date_Label.Text = Dat;
+            ip = IP;
             port = PORT;
+            id = ID;
         }
 
         private void PostForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -53,6 +58,24 @@ namespace Client
             FeedBack FB = new FeedBack("Аноним", ip, port, this);
             Hide();
             FB.Show();
+        }
+
+        private void IsRead_BTN_Click(object sender, EventArgs e)
+        {
+            TcpClient client = new TcpClient();
+            try
+            {
+                client.Connect(IPAddress.Parse(ip), port);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return;
+            }
+
+            NetworkStream stream = client.GetStream();
+            byte[] data = Encoding.UTF8.GetBytes("." + id.ToString());
+            stream.Write(data, 0, data.Length);
         }
     }
 }

@@ -14,8 +14,11 @@ namespace Client
     {
         MainPage MP;
         StringBuilder str;
+        string IP;
+        int PORT;
+        int ID;
 
-        public PostControll(string title, string important, string date, StringBuilder tex,MainPage Main)
+        public PostControll(string title, string important, string date, StringBuilder tex,MainPage Main, string ip, int port, int id)
         {
             InitializeComponent();
 
@@ -24,6 +27,9 @@ namespace Client
             Date.Text = date;
             MP = Main;
             str = tex;
+            IP = ip;
+            PORT = port;
+            ID = id;
         }
 
         private void Post_Load(object sender, EventArgs e)
@@ -37,7 +43,7 @@ namespace Client
 
         private void PostControll_Click(object sender, EventArgs e)
         {
-            PostForm PostOpned = new PostForm(str, Title.Text, Important.Text, Date.Text, MP);
+            PostForm PostOpned = new PostForm(str, Title.Text, Important.Text, Date.Text, MP, IP, PORT, ID);
             PostOpned.Show();
             MP.Hide();
         }
