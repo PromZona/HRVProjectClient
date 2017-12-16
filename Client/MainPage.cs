@@ -26,6 +26,7 @@ namespace Client
         {
             InitializeComponent();
             TeacherName_LB.Text += TeacherName;
+            
             ip = serip;
             port = serport;
         }

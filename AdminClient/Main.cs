@@ -29,6 +29,9 @@ namespace AdminClient
 
         private void CreatePost_BTN_Click(object sender, EventArgs e)
         {
+            ip = IP_TB.Text;
+            port = int.Parse(Port_TB.Text);
+
             if (Title_TB.Text == "" && Text_TB.Text == "" && Imortant_TB.Text == null)
             {
                 MessageBox.Show("Не все поля заполнены");
@@ -72,6 +75,8 @@ namespace AdminClient
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ip = IP_TB.Text;
+            port = int.Parse(Port_TB.Text);
             FeedBacks FB = new FeedBacks(port, ip);
             FB.Show();
             Hide();

@@ -25,6 +25,8 @@ namespace Client
         public Auth()
         {
             InitializeComponent();
+            ip = IP_TB.Text;
+            port = int.Parse(Port_TB.Text);
         }
 
         private void SendAuth_BTN_Click(object sender, EventArgs e)

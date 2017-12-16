@@ -36,6 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Text_TB = new System.Windows.Forms.TextBox();
             this.FeedBack_BTN = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Port_TB = new System.Windows.Forms.TextBox();
+            this.IP_TB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CreatePost_BTN
@@ -112,11 +115,37 @@
             this.FeedBack_BTN.UseVisualStyleBackColor = true;
             this.FeedBack_BTN.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(446, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "IP";
+            // 
+            // Port_TB
+            // 
+            this.Port_TB.Location = new System.Drawing.Point(417, 158);
+            this.Port_TB.Name = "Port_TB";
+            this.Port_TB.Size = new System.Drawing.Size(100, 20);
+            this.Port_TB.TabIndex = 9;
+            // 
+            // IP_TB
+            // 
+            this.IP_TB.Location = new System.Drawing.Point(417, 106);
+            this.IP_TB.Name = "IP_TB";
+            this.IP_TB.Size = new System.Drawing.Size(100, 20);
+            this.IP_TB.TabIndex = 8;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 312);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Port_TB);
+            this.Controls.Add(this.IP_TB);
             this.Controls.Add(this.FeedBack_BTN);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Text_TB);
@@ -144,6 +173,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Text_TB;
         private System.Windows.Forms.Button FeedBack_BTN;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Port_TB;
+        private System.Windows.Forms.TextBox IP_TB;
     }
 }
 
