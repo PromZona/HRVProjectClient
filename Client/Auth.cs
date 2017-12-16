@@ -25,12 +25,13 @@ namespace Client
         public Auth()
         {
             InitializeComponent();
-            ip = IP_TB.Text;
-            port = int.Parse(Port_TB.Text);
+            
         }
 
         private void SendAuth_BTN_Click(object sender, EventArgs e)
         {
+            ip = IP_TB.Text;
+            port = int.Parse(Port_TB.Text);
             if (TeacherName_TB.Text.Trim() == "") return; // Защита от дурака
 
             Client = new TcpClient(); // Инициализируем переменную
