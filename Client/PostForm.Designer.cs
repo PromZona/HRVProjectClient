@@ -39,9 +39,10 @@
             // 
             // Back_But
             // 
+            this.Back_But.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Back_But.Location = new System.Drawing.Point(12, 12);
             this.Back_But.Name = "Back_But";
-            this.Back_But.Size = new System.Drawing.Size(75, 23);
+            this.Back_But.Size = new System.Drawing.Size(80, 28);
             this.Back_But.TabIndex = 0;
             this.Back_But.Text = "Назад";
             this.Back_But.UseVisualStyleBackColor = true;
@@ -123,6 +124,7 @@
             this.Controls.Add(this.Text_TB);
             this.Controls.Add(this.Title_label);
             this.Controls.Add(this.Back_But);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PostForm";
             this.Text = "PostForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PostForm_FormClosed);

@@ -22,6 +22,8 @@ namespace Client
 
         public PostForm(StringBuilder tex, string tit, string Import, string Dat ,MainPage mp, string IP, int PORT, int ID)
         {
+            CenterToScreen();
+
             InitializeComponent();
             MP = mp;
             Title_label.Text = tit;

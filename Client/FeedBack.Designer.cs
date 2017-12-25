@@ -115,6 +115,7 @@
             this.Controls.Add(this.Tit_TB);
             this.Controls.Add(this.Back_BTN);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FeedBack";
             this.Text = "FeedBack";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FeedBack_FormClosing);

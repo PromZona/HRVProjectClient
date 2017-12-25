@@ -25,6 +25,8 @@ namespace Client
         public MainPage(string TeacherName, string serip, int serport)
         {
             InitializeComponent();
+            CenterToScreen();
+
             TeacherName_LB.Text += TeacherName;
             
             ip = serip;
@@ -39,20 +41,26 @@ namespace Client
         private void MainPage_Load(object sender, EventArgs e)
         {
             GetPostsFromServer(); // Врубать при рабочем серваке
-            //Post n = new Post("Smth", "5", "11.11.1111", "Very Important Text", panel1, this);
+            //Post n = new Post(1,"Smth", "5", "11.11.1111", "Very Important Text", panel1, this, ip, port);
             //n.setControlY(PanelY);
             //PanelY += 35;
-            //Post k = new Post("kek", "4", "22.11.1011", "Very Important Text", panel1, this);
+            //Post k = new Post(2 ,"kek", "4", "22.11.1011", "Very Important Text", panel1, this, ip, port);
             //k.setControlY(PanelY);
             //PanelY += 35;
-            //Post l = new Post("Cheburek", "1", "11.16.1181", "Very Important Text", panel1, this);
+            //Post l = new Post(2 , "Cheburek", "1", "11.16.1181", "Very Important Text", panel1, this, ip, port);
             //l.setControlY(PanelY);
             //PanelY += 35;
-            //Post z = new Post("Alternative", "2", "11.11.1156", "Very Important Text", panel1, this);
+            //Post z = new Post(2, "Alternative", "2", "11.11.1156", "Very Important Text", panel1, this, ip, port);
             //z.setControlY(PanelY);
             //PanelY += 35;
-            //Post t = new Post("Stanislav", "2", "14.51.1111", "Very Important Text", panel1, this);
+            //Post t = new Post(2, "Stanislav", "2", "14.51.1111", "Very Important Text", panel1, this, ip, port);
             //t.setControlY(PanelY);
+            //PanelY += 35;
+            //Post a = new Post(2, "Stanislav", "2", "14.51.1111", "Very Important Text", panel1, this, ip, port);
+            //a.setControlY(PanelY);
+            //PanelY += 35;
+            //Post b = new Post(2, "Stanislav", "2", "14.51.1111", "Very Important Text", panel1, this, ip, port);
+            //b.setControlY(PanelY);
             //PanelY += 35;
         }
 

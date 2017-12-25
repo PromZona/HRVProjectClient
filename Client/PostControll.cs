@@ -47,5 +47,101 @@ namespace Client
             PostOpned.Show();
             MP.Hide();
         }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+            PostForm PostOpned = new PostForm(str, Title.Text, Important.Text, Date.Text, MP, IP, PORT, ID);
+            PostOpned.Show();
+            MP.Hide();
+        }
+
+        private void Important_Click(object sender, EventArgs e)
+        {
+            PostForm PostOpned = new PostForm(str, Title.Text, Important.Text, Date.Text, MP, IP, PORT, ID);
+            PostOpned.Show();
+            MP.Hide();
+        }
+
+        private void Date_Click(object sender, EventArgs e)
+        {
+            PostForm PostOpned = new PostForm(str, Title.Text, Important.Text, Date.Text, MP, IP, PORT, ID);
+            PostOpned.Show();
+            MP.Hide();
+        }
+
+
+        //наведние на элемент управления
+        private void PostControll_MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.Gray;
+        }
+
+        private void PostControll_MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void PostControll_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+
+
+        //Наведение на заголовок
+        private void Title_MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.Gray;
+        }
+
+        private void Title_MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void Title_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+
+        //Наведнеи на важность
+        private void Important_MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.Gray;
+        }
+
+        private void Important_MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void Important_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+
+
+        //наведение на дату
+
+        private void Date_MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.Gray;
+        }
+
+        private void Date_MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void Date_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
     }
 }

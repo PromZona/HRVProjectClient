@@ -33,9 +33,6 @@
             this.TeacherName_TB = new System.Windows.Forms.TextBox();
             this.SendAuth_BTN = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.IP_TB = new System.Windows.Forms.TextBox();
-            this.Port_TB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Name_Label
@@ -64,6 +61,7 @@
             this.TeacherName_TB.Name = "TeacherName_TB";
             this.TeacherName_TB.Size = new System.Drawing.Size(197, 20);
             this.TeacherName_TB.TabIndex = 2;
+            this.TeacherName_TB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TeacherName_TB_KeyDown);
             // 
             // SendAuth_BTN
             // 
@@ -86,45 +84,21 @@
             this.label2.Text = "Проблемы?";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // IP_TB
-            // 
-            this.IP_TB.Location = new System.Drawing.Point(12, 125);
-            this.IP_TB.Name = "IP_TB";
-            this.IP_TB.Size = new System.Drawing.Size(100, 20);
-            this.IP_TB.TabIndex = 5;
-            // 
-            // Port_TB
-            // 
-            this.Port_TB.Location = new System.Drawing.Point(12, 177);
-            this.Port_TB.Name = "Port_TB";
-            this.Port_TB.Size = new System.Drawing.Size(100, 20);
-            this.Port_TB.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "IP";
-            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 241);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.Port_TB);
-            this.Controls.Add(this.IP_TB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SendAuth_BTN);
             this.Controls.Add(this.TeacherName_TB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Name_Label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Auth";
             this.Text = "Вход";
             this.Load += new System.EventHandler(this.Auth_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auth_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,9 +111,6 @@
         private System.Windows.Forms.TextBox TeacherName_TB;
         private System.Windows.Forms.Button SendAuth_BTN;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox IP_TB;
-        private System.Windows.Forms.TextBox Port_TB;
-        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -22,6 +22,8 @@ namespace Client
 
         public FeedBack(string TeacherName, string IP, int PORT, Form CurForm)
         {
+            CenterToScreen();
+
             InitializeComponent();
             ip = IP;
             port = PORT;

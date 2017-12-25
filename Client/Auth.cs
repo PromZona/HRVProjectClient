@@ -10,28 +10,58 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
+
+
 
 namespace Client
 {
     public partial class Auth : Form
     {
-
         static string ip = "158.255.152.202";
         static int port = 5000;
         static TcpClient Client = null;
         MainPage MP = null;
 
-
         public Auth()
         {
             InitializeComponent();
-            
+            CenterToScreen();
         }
 
         private void SendAuth_BTN_Click(object sender, EventArgs e)
         {
-            ip = IP_TB.Text;
-            port = int.Parse(Port_TB.Text);
+            EnterProgramm();       
+        }
+
+        private void Auth_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FeedBack FB = new FeedBack("Аноним", ip, port, this);
+            Hide();
+            FB.Show();
+        }
+
+        private void EnterProgramm()
+        {
+//#if RELEASE
+//                StreamReader strrd = new StreamReader("IPconfig.txt");
+//                ip = strrd.ReadLine();
+//                port = int.Parse(strrd.ReadLine());
+//                strrd.Close();
+//#endif
+
+//#if DEBUG
+//            MP = new MainPage(TeacherName_TB.Text, ip, port);
+//            MP.Show();
+//            Hide();
+            
+//#endif
+
             if (TeacherName_TB.Text.Trim() == "") return; // Защита от дурака
 
             Client = new TcpClient(); // Инициализируем переменную
@@ -42,7 +72,7 @@ namespace Client
             {
                 response = TeacherName_TB.Text;
             }
-            else 
+            else
             {
                 MessageBox.Show("Введите Фамилию Имя в специальное поле");
                 return;
@@ -57,7 +87,7 @@ namespace Client
 
             data = new byte[32];
             StringBuilder str = new StringBuilder();
-          
+
             if (stream.DataAvailable)
             {
                 do
@@ -65,14 +95,14 @@ namespace Client
                     int bytes = stream.Read(data, 0, data.Length);
                     str.Append(Encoding.ASCII.GetString(data, 0, bytes));
                 } while (stream.DataAvailable);
-            }  
+            }
 
             stream.Close();
             Client.Close();
             if (str != null)
             {
                 if (str[1].ToString() == "1")
-                {               
+                {
                     MP = new MainPage(TeacherName_TB.Text, ip, port);
                     MP.Show();
                     Hide();
@@ -80,16 +110,20 @@ namespace Client
             }
         }
 
-        private void Auth_Load(object sender, EventArgs e)
+        private void Auth_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                EnterProgramm();
+            }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void TeacherName_TB_KeyDown(object sender, KeyEventArgs e)
         {
-            FeedBack FB = new FeedBack("Аноним", ip, port, this);
-            Hide();
-            FB.Show();
+            if (e.KeyCode == Keys.Enter)
+            {
+                EnterProgramm();
+            }
         }
     }   
 }
