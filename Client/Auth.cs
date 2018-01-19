@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define RELEASE
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,8 +12,6 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
-
-
 
 namespace Client
 {
@@ -48,21 +47,21 @@ namespace Client
 
         private void EnterProgramm()
         {
-//#if RELEASE
-//                StreamReader strrd = new StreamReader("IPconfig.txt");
-//                ip = strrd.ReadLine();
-//                port = int.Parse(strrd.ReadLine());
-//                strrd.Close();
-//#endif
+#if RELEASE
+                StreamReader strrd = new StreamReader("IPconfig.txt");
+                ip = strrd.ReadLine();
+                port = int.Parse(strrd.ReadLine());
+                strrd.Close();
+#endif
 
-//#if DEBUG
-//            MP = new MainPage(TeacherName_TB.Text, ip, port);
-//            MP.Show();
-//            Hide();
-            
-//#endif
+            //#if DEBUG
+            //            MP = new MainPage(TeacherName_TB.Text, ip, port);
+            //            MP.Show();
+            //            Hide();
 
-            if (TeacherName_TB.Text.Trim() == "") return; // Защита от дурака
+            //#endif
+
+            if (TeacherName_TB.Text == "") return; // Защита от дурака
 
             Client = new TcpClient(); // Инициализируем переменную
             Client.Connect(IPAddress.Parse(ip), port); // Делаем конект по айпи и порту
