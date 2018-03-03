@@ -20,13 +20,14 @@ namespace AdminClient
         string IP;
         TcpClient client;
         List<FeedBack> FeedBacksList = new List<FeedBack>();
+        Main main;
 
-
-        public FeedBacks(int port, string ip)
+        public FeedBacks(int port, string ip, Main m)
         {
             InitializeComponent();
             IP = ip;
             PORT = port;
+            main = m;
         }
 
         private void FeedBacks_Load(object sender, EventArgs e)
@@ -107,6 +108,12 @@ namespace AdminClient
         private void FeedBacks_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Back_BTN_Click(object sender, EventArgs e)
+        {
+            main.Show();
+            Hide();
         }
     }
 

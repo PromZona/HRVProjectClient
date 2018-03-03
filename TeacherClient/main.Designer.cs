@@ -30,14 +30,25 @@
         {
             this.MenuBar_panel = new System.Windows.Forms.Panel();
             this.MenuBarChoosed_Panel = new System.Windows.Forms.Panel();
+            this.SettingsShow_Button = new System.Windows.Forms.Button();
+            this.FeedBackShow_Button = new System.Windows.Forms.Button();
+            this.PostsShow_Button = new System.Windows.Forms.Button();
             this.logo_panel = new System.Windows.Forms.Panel();
             this.info_panel = new System.Windows.Forms.Panel();
+            this.TeacherProfile_Button = new System.Windows.Forms.Button();
+            this.Exit_Button = new System.Windows.Forms.Button();
             this.Posts_panel = new System.Windows.Forms.Panel();
             this.ShowPost_Panel = new System.Windows.Forms.Panel();
+            this.FireImportancy5_PictureBox = new System.Windows.Forms.PictureBox();
+            this.FireImportancy4_PictureBox = new System.Windows.Forms.PictureBox();
+            this.FireImportancy3_PictureBox = new System.Windows.Forms.PictureBox();
+            this.FireImportancy2_PictureBox = new System.Windows.Forms.PictureBox();
+            this.FireImportancy1_PictureBox = new System.Windows.Forms.PictureBox();
             this.PostAuthor_Label = new System.Windows.Forms.Label();
             this.PostText_TextBox = new System.Windows.Forms.TextBox();
             this.PostTitle_label = new System.Windows.Forms.Label();
             this.PostsOnlyTitles_Panel = new System.Windows.Forms.Panel();
+            this.HidePostPanel_Button = new System.Windows.Forms.Button();
             this.PostsFolders_Panel = new System.Windows.Forms.Panel();
             this.PostsFolsersTitle_label = new System.Windows.Forms.Label();
             this.PostsFoldersChoosed_panel = new System.Windows.Forms.Panel();
@@ -50,16 +61,15 @@
             this.Importancy_Label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Title_Label = new System.Windows.Forms.Label();
-            this.HidePostPanel_Button = new System.Windows.Forms.Button();
-            this.TeacherProfile_Button = new System.Windows.Forms.Button();
-            this.Exit_Button = new System.Windows.Forms.Button();
-            this.SettingsShow_Button = new System.Windows.Forms.Button();
-            this.FeedBackShow_Button = new System.Windows.Forms.Button();
-            this.PostsShow_Button = new System.Windows.Forms.Button();
             this.MenuBar_panel.SuspendLayout();
             this.info_panel.SuspendLayout();
             this.Posts_panel.SuspendLayout();
             this.ShowPost_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy5_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy4_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy3_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy2_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy1_PictureBox)).BeginInit();
             this.PostsOnlyTitles_Panel.SuspendLayout();
             this.PostsFolders_Panel.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +86,7 @@
             this.MenuBar_panel.Name = "MenuBar_panel";
             this.MenuBar_panel.Size = new System.Drawing.Size(184, 632);
             this.MenuBar_panel.TabIndex = 0;
+            this.MenuBar_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuBar_panel_Paint);
             // 
             // MenuBarChoosed_Panel
             // 
@@ -85,6 +96,57 @@
             this.MenuBarChoosed_Panel.Name = "MenuBarChoosed_Panel";
             this.MenuBarChoosed_Panel.Size = new System.Drawing.Size(10, 100);
             this.MenuBarChoosed_Panel.TabIndex = 4;
+            // 
+            // SettingsShow_Button
+            // 
+            this.SettingsShow_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SettingsShow_Button.FlatAppearance.BorderSize = 0;
+            this.SettingsShow_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingsShow_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SettingsShow_Button.ForeColor = System.Drawing.Color.White;
+            this.SettingsShow_Button.Image = global::TeacherClient.Properties.Resources.settings;
+            this.SettingsShow_Button.Location = new System.Drawing.Point(12, 520);
+            this.SettingsShow_Button.Name = "SettingsShow_Button";
+            this.SettingsShow_Button.Size = new System.Drawing.Size(166, 100);
+            this.SettingsShow_Button.TabIndex = 3;
+            this.SettingsShow_Button.Text = "Настройки";
+            this.SettingsShow_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SettingsShow_Button.UseVisualStyleBackColor = true;
+            this.SettingsShow_Button.Click += new System.EventHandler(this.SettingsShow_Button_Click);
+            // 
+            // FeedBackShow_Button
+            // 
+            this.FeedBackShow_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FeedBackShow_Button.FlatAppearance.BorderSize = 0;
+            this.FeedBackShow_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FeedBackShow_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FeedBackShow_Button.ForeColor = System.Drawing.Color.White;
+            this.FeedBackShow_Button.Image = global::TeacherClient.Properties.Resources.question_sign;
+            this.FeedBackShow_Button.Location = new System.Drawing.Point(12, 265);
+            this.FeedBackShow_Button.Name = "FeedBackShow_Button";
+            this.FeedBackShow_Button.Size = new System.Drawing.Size(166, 100);
+            this.FeedBackShow_Button.TabIndex = 2;
+            this.FeedBackShow_Button.Text = "Вопросы";
+            this.FeedBackShow_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.FeedBackShow_Button.UseVisualStyleBackColor = true;
+            this.FeedBackShow_Button.Click += new System.EventHandler(this.FeedBackShow_Button_Click);
+            // 
+            // PostsShow_Button
+            // 
+            this.PostsShow_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PostsShow_Button.FlatAppearance.BorderSize = 0;
+            this.PostsShow_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PostsShow_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PostsShow_Button.ForeColor = System.Drawing.Color.White;
+            this.PostsShow_Button.Image = global::TeacherClient.Properties.Resources.envelope;
+            this.PostsShow_Button.Location = new System.Drawing.Point(12, 135);
+            this.PostsShow_Button.Name = "PostsShow_Button";
+            this.PostsShow_Button.Size = new System.Drawing.Size(166, 100);
+            this.PostsShow_Button.TabIndex = 0;
+            this.PostsShow_Button.Text = "Сообщения";
+            this.PostsShow_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PostsShow_Button.UseVisualStyleBackColor = true;
+            this.PostsShow_Button.Click += new System.EventHandler(this.PostsShow_Button_Click);
             // 
             // logo_panel
             // 
@@ -103,6 +165,40 @@
             this.info_panel.Name = "info_panel";
             this.info_panel.Size = new System.Drawing.Size(1170, 84);
             this.info_panel.TabIndex = 1;
+            this.info_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.info_panel_Paint);
+            // 
+            // TeacherProfile_Button
+            // 
+            this.TeacherProfile_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TeacherProfile_Button.FlatAppearance.BorderSize = 0;
+            this.TeacherProfile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TeacherProfile_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TeacherProfile_Button.ForeColor = System.Drawing.Color.White;
+            this.TeacherProfile_Button.Image = global::TeacherClient.Properties.Resources.avatar;
+            this.TeacherProfile_Button.Location = new System.Drawing.Point(710, 3);
+            this.TeacherProfile_Button.Name = "TeacherProfile_Button";
+            this.TeacherProfile_Button.Size = new System.Drawing.Size(360, 75);
+            this.TeacherProfile_Button.TabIndex = 4;
+            this.TeacherProfile_Button.Text = "Сергей Есенин";
+            this.TeacherProfile_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.TeacherProfile_Button.UseVisualStyleBackColor = true;
+            this.TeacherProfile_Button.Click += new System.EventHandler(this.TeacherProfile_Button_Click);
+            // 
+            // Exit_Button
+            // 
+            this.Exit_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Exit_Button.FlatAppearance.BorderSize = 0;
+            this.Exit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Exit_Button.ForeColor = System.Drawing.Color.White;
+            this.Exit_Button.Image = global::TeacherClient.Properties.Resources.exit;
+            this.Exit_Button.Location = new System.Drawing.Point(1090, 3);
+            this.Exit_Button.Name = "Exit_Button";
+            this.Exit_Button.Size = new System.Drawing.Size(80, 78);
+            this.Exit_Button.TabIndex = 3;
+            this.Exit_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Exit_Button.UseVisualStyleBackColor = true;
+            this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
             // 
             // Posts_panel
             // 
@@ -126,6 +222,11 @@
             // ShowPost_Panel
             // 
             this.ShowPost_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.ShowPost_Panel.Controls.Add(this.FireImportancy5_PictureBox);
+            this.ShowPost_Panel.Controls.Add(this.FireImportancy4_PictureBox);
+            this.ShowPost_Panel.Controls.Add(this.FireImportancy3_PictureBox);
+            this.ShowPost_Panel.Controls.Add(this.FireImportancy2_PictureBox);
+            this.ShowPost_Panel.Controls.Add(this.FireImportancy1_PictureBox);
             this.ShowPost_Panel.Controls.Add(this.PostAuthor_Label);
             this.ShowPost_Panel.Controls.Add(this.PostText_TextBox);
             this.ShowPost_Panel.Controls.Add(this.PostTitle_label);
@@ -136,6 +237,57 @@
             this.ShowPost_Panel.Size = new System.Drawing.Size(1025, 548);
             this.ShowPost_Panel.TabIndex = 18;
             this.ShowPost_Panel.Visible = false;
+            this.ShowPost_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.ShowPost_Panel_Paint);
+            // 
+            // FireImportancy5_PictureBox
+            // 
+            this.FireImportancy5_PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.FireImportancy5_PictureBox.Image = global::TeacherClient.Properties.Resources.flame;
+            this.FireImportancy5_PictureBox.Location = new System.Drawing.Point(896, 73);
+            this.FireImportancy5_PictureBox.Name = "FireImportancy5_PictureBox";
+            this.FireImportancy5_PictureBox.Size = new System.Drawing.Size(32, 32);
+            this.FireImportancy5_PictureBox.TabIndex = 31;
+            this.FireImportancy5_PictureBox.TabStop = false;
+            // 
+            // FireImportancy4_PictureBox
+            // 
+            this.FireImportancy4_PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.FireImportancy4_PictureBox.Image = global::TeacherClient.Properties.Resources.flame;
+            this.FireImportancy4_PictureBox.Location = new System.Drawing.Point(858, 73);
+            this.FireImportancy4_PictureBox.Name = "FireImportancy4_PictureBox";
+            this.FireImportancy4_PictureBox.Size = new System.Drawing.Size(32, 32);
+            this.FireImportancy4_PictureBox.TabIndex = 30;
+            this.FireImportancy4_PictureBox.TabStop = false;
+            // 
+            // FireImportancy3_PictureBox
+            // 
+            this.FireImportancy3_PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.FireImportancy3_PictureBox.Image = global::TeacherClient.Properties.Resources.flame;
+            this.FireImportancy3_PictureBox.Location = new System.Drawing.Point(820, 73);
+            this.FireImportancy3_PictureBox.Name = "FireImportancy3_PictureBox";
+            this.FireImportancy3_PictureBox.Size = new System.Drawing.Size(32, 32);
+            this.FireImportancy3_PictureBox.TabIndex = 29;
+            this.FireImportancy3_PictureBox.TabStop = false;
+            // 
+            // FireImportancy2_PictureBox
+            // 
+            this.FireImportancy2_PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.FireImportancy2_PictureBox.Image = global::TeacherClient.Properties.Resources.flame;
+            this.FireImportancy2_PictureBox.Location = new System.Drawing.Point(782, 73);
+            this.FireImportancy2_PictureBox.Name = "FireImportancy2_PictureBox";
+            this.FireImportancy2_PictureBox.Size = new System.Drawing.Size(32, 32);
+            this.FireImportancy2_PictureBox.TabIndex = 28;
+            this.FireImportancy2_PictureBox.TabStop = false;
+            // 
+            // FireImportancy1_PictureBox
+            // 
+            this.FireImportancy1_PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
+            this.FireImportancy1_PictureBox.Image = global::TeacherClient.Properties.Resources.flame;
+            this.FireImportancy1_PictureBox.Location = new System.Drawing.Point(744, 73);
+            this.FireImportancy1_PictureBox.Name = "FireImportancy1_PictureBox";
+            this.FireImportancy1_PictureBox.Size = new System.Drawing.Size(32, 32);
+            this.FireImportancy1_PictureBox.TabIndex = 27;
+            this.FireImportancy1_PictureBox.TabStop = false;
             // 
             // PostAuthor_Label
             // 
@@ -154,19 +306,21 @@
             this.PostText_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PostText_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PostText_TextBox.ForeColor = System.Drawing.Color.White;
-            this.PostText_TextBox.Location = new System.Drawing.Point(169, 181);
+            this.PostText_TextBox.Location = new System.Drawing.Point(177, 181);
             this.PostText_TextBox.Multiline = true;
             this.PostText_TextBox.Name = "PostText_TextBox";
-            this.PostText_TextBox.Size = new System.Drawing.Size(844, 355);
+            this.PostText_TextBox.ReadOnly = true;
+            this.PostText_TextBox.Size = new System.Drawing.Size(811, 355);
             this.PostText_TextBox.TabIndex = 9;
             this.PostText_TextBox.Text = "Текст, Текст, Текст";
+            this.PostText_TextBox.TextChanged += new System.EventHandler(this.PostText_TextBox_TextChanged);
             // 
             // PostTitle_label
             // 
             this.PostTitle_label.AutoSize = true;
             this.PostTitle_label.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PostTitle_label.ForeColor = System.Drawing.Color.White;
-            this.PostTitle_label.Location = new System.Drawing.Point(537, 30);
+            this.PostTitle_label.Location = new System.Drawing.Point(417, 30);
             this.PostTitle_label.Name = "PostTitle_label";
             this.PostTitle_label.Size = new System.Drawing.Size(69, 30);
             this.PostTitle_label.TabIndex = 8;
@@ -181,11 +335,29 @@
             this.PostsOnlyTitles_Panel.Name = "PostsOnlyTitles_Panel";
             this.PostsOnlyTitles_Panel.Size = new System.Drawing.Size(160, 548);
             this.PostsOnlyTitles_Panel.TabIndex = 0;
+            this.PostsOnlyTitles_Panel.VisibleChanged += new System.EventHandler(this.PostsOnlyTitles_Panel_VisibleChanged);
+            // 
+            // HidePostPanel_Button
+            // 
+            this.HidePostPanel_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.HidePostPanel_Button.FlatAppearance.BorderSize = 0;
+            this.HidePostPanel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HidePostPanel_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HidePostPanel_Button.ForeColor = System.Drawing.Color.White;
+            this.HidePostPanel_Button.Image = global::TeacherClient.Properties.Resources.left_arrow__1_;
+            this.HidePostPanel_Button.Location = new System.Drawing.Point(3, 12);
+            this.HidePostPanel_Button.Name = "HidePostPanel_Button";
+            this.HidePostPanel_Button.Size = new System.Drawing.Size(150, 64);
+            this.HidePostPanel_Button.TabIndex = 3;
+            this.HidePostPanel_Button.Text = "Все письма";
+            this.HidePostPanel_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.HidePostPanel_Button.UseVisualStyleBackColor = true;
+            this.HidePostPanel_Button.Click += new System.EventHandler(this.HidePostPanel_Button_Click);
             // 
             // PostsFolders_Panel
             // 
             this.PostsFolders_Panel.AutoScroll = true;
-            this.PostsFolders_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(50)))), ((int)(((byte)(75)))));
+            this.PostsFolders_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(60)))), ((int)(((byte)(89)))));
             this.PostsFolders_Panel.Controls.Add(this.PostsFolsersTitle_label);
             this.PostsFolders_Panel.Controls.Add(this.PostsFoldersChoosed_panel);
             this.PostsFolders_Panel.Controls.Add(this.AllPostsShow_Button);
@@ -318,106 +490,6 @@
             this.Title_Label.Text = "Тема";
             this.Title_Label.Click += new System.EventHandler(this.Title_Label_Click);
             // 
-            // HidePostPanel_Button
-            // 
-            this.HidePostPanel_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.HidePostPanel_Button.FlatAppearance.BorderSize = 0;
-            this.HidePostPanel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HidePostPanel_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HidePostPanel_Button.ForeColor = System.Drawing.Color.White;
-            this.HidePostPanel_Button.Image = global::TeacherClient.Properties.Resources.left_arrow__1_;
-            this.HidePostPanel_Button.Location = new System.Drawing.Point(3, 12);
-            this.HidePostPanel_Button.Name = "HidePostPanel_Button";
-            this.HidePostPanel_Button.Size = new System.Drawing.Size(150, 64);
-            this.HidePostPanel_Button.TabIndex = 3;
-            this.HidePostPanel_Button.Text = "Все письма";
-            this.HidePostPanel_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.HidePostPanel_Button.UseVisualStyleBackColor = true;
-            this.HidePostPanel_Button.Click += new System.EventHandler(this.HidePostPanel_Button_Click);
-            // 
-            // TeacherProfile_Button
-            // 
-            this.TeacherProfile_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.TeacherProfile_Button.FlatAppearance.BorderSize = 0;
-            this.TeacherProfile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TeacherProfile_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TeacherProfile_Button.ForeColor = System.Drawing.Color.White;
-            this.TeacherProfile_Button.Image = global::TeacherClient.Properties.Resources.avatar;
-            this.TeacherProfile_Button.Location = new System.Drawing.Point(710, 3);
-            this.TeacherProfile_Button.Name = "TeacherProfile_Button";
-            this.TeacherProfile_Button.Size = new System.Drawing.Size(360, 75);
-            this.TeacherProfile_Button.TabIndex = 4;
-            this.TeacherProfile_Button.Text = "Фамлия Имя";
-            this.TeacherProfile_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.TeacherProfile_Button.UseVisualStyleBackColor = true;
-            // 
-            // Exit_Button
-            // 
-            this.Exit_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Exit_Button.FlatAppearance.BorderSize = 0;
-            this.Exit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Exit_Button.ForeColor = System.Drawing.Color.White;
-            this.Exit_Button.Image = global::TeacherClient.Properties.Resources.exit;
-            this.Exit_Button.Location = new System.Drawing.Point(1090, 3);
-            this.Exit_Button.Name = "Exit_Button";
-            this.Exit_Button.Size = new System.Drawing.Size(80, 78);
-            this.Exit_Button.TabIndex = 3;
-            this.Exit_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Exit_Button.UseVisualStyleBackColor = true;
-            this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
-            // 
-            // SettingsShow_Button
-            // 
-            this.SettingsShow_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SettingsShow_Button.FlatAppearance.BorderSize = 0;
-            this.SettingsShow_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsShow_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SettingsShow_Button.ForeColor = System.Drawing.Color.White;
-            this.SettingsShow_Button.Image = global::TeacherClient.Properties.Resources.settings;
-            this.SettingsShow_Button.Location = new System.Drawing.Point(12, 520);
-            this.SettingsShow_Button.Name = "SettingsShow_Button";
-            this.SettingsShow_Button.Size = new System.Drawing.Size(166, 100);
-            this.SettingsShow_Button.TabIndex = 3;
-            this.SettingsShow_Button.Text = "Настройки";
-            this.SettingsShow_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.SettingsShow_Button.UseVisualStyleBackColor = true;
-            this.SettingsShow_Button.Click += new System.EventHandler(this.SettingsShow_Button_Click);
-            // 
-            // FeedBackShow_Button
-            // 
-            this.FeedBackShow_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.FeedBackShow_Button.FlatAppearance.BorderSize = 0;
-            this.FeedBackShow_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FeedBackShow_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FeedBackShow_Button.ForeColor = System.Drawing.Color.White;
-            this.FeedBackShow_Button.Image = global::TeacherClient.Properties.Resources.question_sign;
-            this.FeedBackShow_Button.Location = new System.Drawing.Point(12, 265);
-            this.FeedBackShow_Button.Name = "FeedBackShow_Button";
-            this.FeedBackShow_Button.Size = new System.Drawing.Size(166, 100);
-            this.FeedBackShow_Button.TabIndex = 2;
-            this.FeedBackShow_Button.Text = "Вопросы";
-            this.FeedBackShow_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.FeedBackShow_Button.UseVisualStyleBackColor = true;
-            this.FeedBackShow_Button.Click += new System.EventHandler(this.FeedBackShow_Button_Click);
-            // 
-            // PostsShow_Button
-            // 
-            this.PostsShow_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PostsShow_Button.FlatAppearance.BorderSize = 0;
-            this.PostsShow_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PostsShow_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PostsShow_Button.ForeColor = System.Drawing.Color.White;
-            this.PostsShow_Button.Image = global::TeacherClient.Properties.Resources.envelope;
-            this.PostsShow_Button.Location = new System.Drawing.Point(12, 135);
-            this.PostsShow_Button.Name = "PostsShow_Button";
-            this.PostsShow_Button.Size = new System.Drawing.Size(166, 100);
-            this.PostsShow_Button.TabIndex = 0;
-            this.PostsShow_Button.Text = "Сообщения";
-            this.PostsShow_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.PostsShow_Button.UseVisualStyleBackColor = true;
-            this.PostsShow_Button.Click += new System.EventHandler(this.PostsShow_Button_Click);
-            // 
             // Main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,6 +510,11 @@
             this.Posts_panel.PerformLayout();
             this.ShowPost_Panel.ResumeLayout(false);
             this.ShowPost_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy5_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy4_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy3_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy2_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FireImportancy1_PictureBox)).EndInit();
             this.PostsOnlyTitles_Panel.ResumeLayout(false);
             this.PostsFolders_Panel.ResumeLayout(false);
             this.PostsFolders_Panel.PerformLayout();
@@ -475,6 +552,11 @@
         private System.Windows.Forms.TextBox PostText_TextBox;
         private System.Windows.Forms.Label PostTitle_label;
         private System.Windows.Forms.Button HidePostPanel_Button;
+        private System.Windows.Forms.PictureBox FireImportancy5_PictureBox;
+        private System.Windows.Forms.PictureBox FireImportancy4_PictureBox;
+        private System.Windows.Forms.PictureBox FireImportancy3_PictureBox;
+        private System.Windows.Forms.PictureBox FireImportancy2_PictureBox;
+        private System.Windows.Forms.PictureBox FireImportancy1_PictureBox;
     }
 }
 

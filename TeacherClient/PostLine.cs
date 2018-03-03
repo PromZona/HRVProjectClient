@@ -24,16 +24,74 @@ namespace TeacherClient
             post = nPost;
             mainform = main;
 
+            
+            post.postline = this; // Передаем посту ссылку на объект контроллера поста            
+
+
             Titile_label.Text = nPost.Title;
             Date_Label.Text = nPost.Date;
             PostAuthor_Label.Text = nPost.Author;
 
             Location = new Point(145, yPosition);
+            ImportancyShow();
         }
 
         public void OpenPost()
         {
-            mainform.ShowPostPanel(this);
+            mainform.ShowPostPanel(post);
+            post.IsReaded = true;
+        }
+
+        public void ChangeLocation(int y)
+        {
+            Location = new Point(145, y);
+        }
+
+
+
+        private void ImportancyShow()
+        {
+            switch(post.Importancy)
+            {
+                case 1:
+                    FireImportancy1_PictureBox.Visible = true;
+                    FireImportancy2_PictureBox.Visible = false;
+                    FireImportancy3_PictureBox.Visible = false;
+                    FireImportancy4_PictureBox.Visible = false;
+                    FireImportancy5_PictureBox.Visible = false;
+                    break;
+                case 2:
+                    FireImportancy1_PictureBox.Visible = true;
+                    FireImportancy2_PictureBox.Visible = true;
+                    FireImportancy3_PictureBox.Visible = false;
+                    FireImportancy4_PictureBox.Visible = false;
+                    FireImportancy5_PictureBox.Visible = false;
+                    break;
+
+                case 3:
+                    FireImportancy1_PictureBox.Visible = true;
+                    FireImportancy2_PictureBox.Visible = true;
+                    FireImportancy3_PictureBox.Visible = true;
+                    FireImportancy4_PictureBox.Visible = false;
+                    FireImportancy5_PictureBox.Visible = false;
+                    break;
+                case 4:
+                    FireImportancy1_PictureBox.Visible = true;
+                    FireImportancy2_PictureBox.Visible = true;
+                    FireImportancy3_PictureBox.Visible = true;
+                    FireImportancy4_PictureBox.Visible = true;
+                    FireImportancy5_PictureBox.Visible = false;
+                    break;
+
+                case 5:
+                    FireImportancy1_PictureBox.Visible = true;
+                    FireImportancy2_PictureBox.Visible = true;
+                    FireImportancy3_PictureBox.Visible = true;
+                    FireImportancy4_PictureBox.Visible = true;
+                    FireImportancy5_PictureBox.Visible = true;
+                    break;
+            }
+                
         }
 
         private void PostOpen_Button_Click(object sender, EventArgs e)

@@ -49,6 +49,7 @@
             this.Back_BTN.TabIndex = 1;
             this.Back_BTN.Text = "Назад";
             this.Back_BTN.UseVisualStyleBackColor = true;
+            this.Back_BTN.Click += new System.EventHandler(this.Back_BTN_Click);
             // 
             // label1
             // 

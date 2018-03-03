@@ -30,24 +30,24 @@ namespace FirstTest
                 Console.WriteLine(imapClient.DefaultMailbox);
                 Console.WriteLine();
                 var message = imapClient.GetMessage(106, FetchOptions.Normal);
-                Console.WriteLine(message.Subject);
-                Console.WriteLine(message.Body);
+                Console.WriteLine(message.Subject.ToString());
+                Console.WriteLine(message.Body.ToString());
                 Console.WriteLine(message.SubjectEncoding.ToString());
                 Console.WriteLine(message.BodyEncoding.ToString());
                 Console.WriteLine(message.ToString());
                 Console.WriteLine(message.From);
-                Console.WriteLine(message.Priority);
+                Console.WriteLine(message.Priority.ToString());
                 
                 var mesageflags =  imapClient.GetMessageFlags(106);
-                
-                //for (int i = 0; i < imapClient.GetMailboxInfo().Messages; i++)
-                //{
-                //    var Messages = imapClient.GetMessage((uint)i, false);
+
+                for (int i = 0; i < imapClient.GetMailboxInfo().Messages; i++)
+                {
+                    var Messages = imapClient.GetMessage((uint)i, false);
 
 
-                //    Console.WriteLine(Messages.Subject);
-                //    Console.WriteLine();
-                //}
+                    Console.WriteLine(Messages.Subject);
+                    Console.WriteLine();
+                }
 
             };
 
